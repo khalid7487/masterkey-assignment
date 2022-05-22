@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-// import authRoutes from "./auth/Auth.controller"
+import authRoutes from "./auth/Auth.controller"
 // import vehicle from "./vehicle/Vehicle.controller"
 // import news from "./news/News.controller";
 
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-// app.use(`${routePrefix}/auth`, authRoutes)
+app.use(`${routePrefix}/auth`, authRoutes)
 
 
 // app.use(`${routePrefix}/news`, news)

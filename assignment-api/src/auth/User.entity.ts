@@ -106,8 +106,6 @@ export class User extends CoreEntity {
     @Column({nullable: true})
     bio: string
 
-    @Column({type: "text"})
-    totp_base64_string: string;
 
 
     @BeforeInsert()
