@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import authRoutes from "./auth/Auth.controller"
-// import vehicle from "./vehicle/Vehicle.controller"
+import project from "./project/Project.controller"
 // import news from "./news/News.controller";
 
 // import trim from './middleware/trim'
@@ -47,15 +47,12 @@ app.use(function (req, res, next) {
 });
 
 app.use(`${routePrefix}/auth`, authRoutes)
+app.use(`${routePrefix}/project`, project)
 
 
 // app.use(`${routePrefix}/news`, news)
-// app.use(`${routePrefix}/vehicle`, vehicle)
 
 
-// app.get('/uploads', function(req, res){
-//     res.sendFile(__dirname + '/uploads');
-// });
 
 
 app.listen(PORT, async () => {

@@ -492,14 +492,29 @@ export const DeleteById = async (id, res) => {
 export const CountTotalUser = async (req, res) => {
 
     try {
-        const count = await User.count({
+
+        const limit = req.body.limit || 10
+        const page = req.body.page || 1;
+        const offset = (page - 1) * limit;
+
+        let [result, total] = await User.findAndCount({
             relations: ['roles'],
             where: (roles) => {
                 // roles.where('User__roles.name = :name', { name: 'BE_OWNER' }) 
                 roles.where("User__roles.name IN(:...values)", { values: ['MEMBER'] })
             },
+            skip: offset,
+            take: limit
         })
-        return res.status(200).json(count)
+
+        const data = {
+            data: result, //data
+            count: total, //total table record count data
+            totalPage: Math.ceil(total / limit), //total page
+            limit: limit,
+            page: page
+        }
+        return res.status(200).json(data)
 
     } catch (err) {
         console.log(err)

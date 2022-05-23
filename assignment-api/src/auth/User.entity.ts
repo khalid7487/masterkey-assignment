@@ -14,9 +14,8 @@ import bcrypt from "bcrypt";
 import {classToPlain, Exclude} from "class-transformer";
 import {IsEmail, Length} from "class-validator";
 import {Role} from "./Role.entity";
-// import {Vehicle} from "../vehicle/Vehicle.entity";
-// import {Identity} from "./Identity.entity";
 import {CoreEntity} from "../commons/CoreEntity";
+import { Project } from "../project/Project.entity";
 
 @Entity()
 export class User extends CoreEntity {
@@ -83,12 +82,12 @@ export class User extends CoreEntity {
 
 
 
-    // @OneToMany(() => Vehicle, vehicle => vehicle.user, {
-    //     nullable: true, cascade: true,
-    //     onDelete: 'CASCADE',
-    //     onUpdate: 'CASCADE'
-    // })
-    // vehicles: Vehicle[];
+    @OneToMany(() => Project, Project => Project.user, {
+        nullable: true, cascade: true,
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+    })
+    projects: Project[];
 
 
     // @OneToOne(() => Identity, {

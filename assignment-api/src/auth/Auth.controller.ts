@@ -113,7 +113,7 @@ router.delete('/deletebyid/:userId', auth, async (req: any, res: Response) => {
 })
 
 //count total user 
-router.get('/total-user', auth, async (req: Request, res: Response) => {
+router.post('/total-user', auth, async (req: Request, res: Response) => {
     await CountTotalUser(req, res)
 })
 
