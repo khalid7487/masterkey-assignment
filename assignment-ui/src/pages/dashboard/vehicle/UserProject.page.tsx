@@ -1,9 +1,9 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import { Button, Card, Col, Row, Table, Pagination, Form, InputGroup, FormControl } from 'react-bootstrap';
-import { addEnrollment, create, deleteItemById, download, gets, update, UpdateVehicleStatus } from "./vehicle.service";
-import { ToastFailedMsg, ToastSuccessMsg, ToastWarningMsg } from "../../../common/toast";
+import { Button, Card, Col, Row, Table, Pagination } from 'react-bootstrap';
+import { addEnrollment, gets} from "./vehicle.service";
+import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
 import { useHistory } from "react-router-dom";
-import { getLoggedUserId, getLoggedUserRoles } from "../../../common/http";
+import { getLoggedUserId } from "../../../common/http";
 
 
 interface Props {
@@ -11,12 +11,8 @@ interface Props {
 }
 
 export default function UserProjectPage({ }: Props): ReactElement {
-    let history = useHistory();
-
+    
     let [response, setResponse]: any = useState([]);
-    let [projectStatus, setTripStatus]: any = useState([
-        { name: 'PROGRESS', value: "PROGRESS" }, { name: 'OPEN', value: "OPEN" }, { name: 'COMPLETE', value: "COMPLETE" }
-    ]);
 
 
     const [filterQueries, setFilterQueries] = useState({

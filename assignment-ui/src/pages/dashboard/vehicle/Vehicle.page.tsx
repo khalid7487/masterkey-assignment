@@ -1,8 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Button, Card, Col, Row, Table, Pagination, Form, InputGroup, FormControl } from 'react-bootstrap';
 import { create, deleteItemById, download, gets, update, UpdateVehicleStatus } from "./vehicle.service";
-import EditModal from "./Edit.modal";
-import CreateModal from "./Create.modal";
 import { ToastFailedMsg, ToastSuccessMsg, ToastWarningMsg } from "../../../common/toast";
 import { useHistory } from "react-router-dom";
 import { getLoggedUserId, getLoggedUserRoles } from "../../../common/http";

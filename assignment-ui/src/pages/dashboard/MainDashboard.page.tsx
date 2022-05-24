@@ -15,23 +15,9 @@ import VehicleCreatePage from "./vehicle/VehicleCreatePage";
 import VehiclePage from "./vehicle/Vehicle.page";
 import VehicleDetailsPage from "./vehicle/VehicleDetailsPage";
 import Addtrip from "./vehicle/TripCreatePage";
-import OrderCreatePage from "./order/OrderCreatePage";
 import OrderPage from "./order/Order.page";
-import TripCreatePage from "./trip/TripCreatePage";
-import DemoGridPage from "../../rnd/DemoGrid.page";
-import TripPage from "./trip/Trip.page";
-import TripDetailsPage from "./trip/TripDetailsPage";
-import NewsCreatePage from "./news/NewsCreatePage";
-import NewsPage from "./news/news.page";
-import NewsDetailsPage from "./news/NewsDetailsPage";
-import LocationCreatePage from "./locations/LocationCreatePage";
-import LocationPage from "./locations/Location.page";
-import LocationDetailsPage from "./locations/LocationDetailsPage";
 
 import './dashboard.page.scss';
-import UserTripPage from './trip/UserTrip.page';
-import OrderDetailsPage from './order/OrderDetailsPage';
-import OrdersVehicleDetailsPage from './order/OrdersVehicleDetails.page';
 import UserProjectPage from './vehicle/UserProject.page';
 
 interface Props {
@@ -43,10 +29,9 @@ export default function MainDashboardPage({ }: Props): ReactElement {
 
     const history = useHistory()
     let { path, url } = useRouteMatch();
-
-
+    
     const [collapsedSidebar, setCollapsedSidebar] = useState(true);
-    let [lang, setLang]: any = useState('eng')
+  
     const [sidebarMenusData, setSidebarMenus] = useState([]);
 
     useEffect(() => {
@@ -76,8 +61,7 @@ export default function MainDashboardPage({ }: Props): ReactElement {
         })();
 
 
-        // console.log('msg', sidebarMenusData);
-    }, [lang])
+    }, [])
 
 
     const onLogout = ((e: any) => {
@@ -126,35 +110,7 @@ export default function MainDashboardPage({ }: Props): ReactElement {
                         <Route exact path={`${path}/enrollments`} component={OrderPage} />
                         <Route exact path={`${path}/all-open-project`} component={UserProjectPage} />
 
-                        {/*<Route exact path={`${path}/script`} component={ScriptDetailsPage}/>*/}
-                        {/*<Route exact path={`${path}/script/:id`} component={ScriptDetailsPage}/>*/}
-                        {/*<Route exact path={`${path}/script-pagination`} component={ScriptPaginationPage}/>*/}
-
-
-                        <Route exact path={`${path}/add-orders`} component={OrderCreatePage} />
-             
-                        <Route exact path={`${path}/order-user-details/:id`} component={OrderDetailsPage} />          
-                        <Route exact path={`${path}/order-vehicle-details/:id`} component={OrdersVehicleDetailsPage} />
-
-                        <Route exact path={`${path}/add-trip`} component={TripCreatePage} />
-                        <Route exact path={`${path}/view-trips`} component={DemoGridPage} />
-                        <Route exact path={`${path}/trips`} component={TripPage} />
-                        <Route exact path={`${path}/trips/:id`} component={TripDetailsPage} />
-                        <Route exact path={`${path}/user-trips`} component={UserTripPage} />
-
-                        <Route exact path={`${path}/add-news`} component={NewsCreatePage} />
-                        <Route exact path={`${path}/news`} component={NewsPage} />
-                        <Route exact path={`${path}/news/:id`} component={NewsDetailsPage} />
-
-                        <Route exact path={`${path}/add-location`} component={LocationCreatePage} />
-                        <Route exact path={`${path}/locations`} component={LocationPage} />
-                        <Route exact path={`${path}/locations/:id`} component={LocationDetailsPage} />
-
-                        {/*<Route path={`${path}/:collectionId`} component={CollectionStoragePage}/>*/}
                     </Switch>
-
-
-
 
             </div>
         </div>

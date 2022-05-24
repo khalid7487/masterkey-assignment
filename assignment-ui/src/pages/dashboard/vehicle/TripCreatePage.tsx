@@ -2,7 +2,6 @@ import React, { ReactElement, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Card, Col, Form, FormControl, InputGroup, Row, } from "react-bootstrap";
 import { getProjectwiseUser, getVehicleById } from "./vehicle.service";
-import { create } from "../trip/Trip.service";
 import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
 
 
