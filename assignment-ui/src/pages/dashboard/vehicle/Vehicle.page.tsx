@@ -29,35 +29,6 @@ export default function VehiclePage({ }: Props): ReactElement {
         project_status: ''
     });
 
-    // edit modal
-    let [selectedEditItem, setEditSelectedItem]: any = useState({});
-    const [showEditModal, setShowEditModal] = useState(false);
-    const handleEditModalClose = () => setShowEditModal(false);
-
-
-
-    // add new
-    const [showCreateModal, setShowCreateModal] = useState(false);
-    const handleCreateModalClose = () => setShowCreateModal(false);
-
-    const onFormSubmit = async (formData: any) => {
-        console.log('msg', formData);
-
-        let res = await create(formData)
-        if (res.status === 200 || res.status === 201) {
-            let data = await res.json()
-            console.log('msg', data);
-
-        } else {
-            //let error = await res.json()
-            //console.log("error", error)
-        }
-
-        await loadData({});
-    }
-
-
-
     const onDeleteClick = async (item: any) => {
         let res = await deleteItemById(item.id)
         if (res.status === 200 || res.status === 201) {
@@ -133,20 +104,6 @@ export default function VehiclePage({ }: Props): ReactElement {
             [e.target.name]: e.target.value
         })
     }
-
-    //on edit from
-    const onEditFormSubmit = async (formData: any) => {
-        let res = await update(formData)
-        if (res.status === 200 || res.status === 201) {
-            let data = await res.json()
-            ToastWarningMsg("Updated Successfully")
-        } else {
-            //let error = await res.json()
-            ToastFailedMsg("Failed to Save")
-        }
-        await loadData({});
-    }
-
 
 
 
@@ -261,10 +218,6 @@ export default function VehiclePage({ }: Props): ReactElement {
                 <div>Total: {response?.count}</div>
             </div>
 
-
-            <EditModal selectedItem={selectedEditItem} onFormSubmit={onEditFormSubmit} show={showEditModal}
-                handleClose={handleEditModalClose} />
-            <CreateModal onFormSubmit={onFormSubmit} show={showCreateModal} handleClose={handleCreateModalClose} />
         </div>
     )
 };

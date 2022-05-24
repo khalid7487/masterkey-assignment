@@ -32,6 +32,7 @@ import './dashboard.page.scss';
 import UserTripPage from './trip/UserTrip.page';
 import OrderDetailsPage from './order/OrderDetailsPage';
 import OrdersVehicleDetailsPage from './order/OrdersVehicleDetails.page';
+import UserProjectPage from './vehicle/UserProject.page';
 
 interface Props {
 
@@ -123,6 +124,7 @@ export default function MainDashboardPage({ }: Props): ReactElement {
                         <Route exact path={`${path}/project/:id`} component={VehicleDetailsPage} />
                         <Route exact path={`${path}/get-project-wise-user/:id`} component={Addtrip} />
                         <Route exact path={`${path}/enrollments`} component={OrderPage} />
+                        <Route exact path={`${path}/all-open-project`} component={UserProjectPage} />
 
                         {/*<Route exact path={`${path}/script`} component={ScriptDetailsPage}/>*/}
                         {/*<Route exact path={`${path}/script/:id`} component={ScriptDetailsPage}/>*/}

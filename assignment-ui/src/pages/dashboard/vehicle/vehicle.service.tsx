@@ -48,3 +48,7 @@ export const updateVehicle = ( id:any, payload:any) => {
 export const UpdateVehicleStatus = (id:any, payload:any) => {
     return patch(`/project/update-status/${id}`, payload);
 };
+
+export const addEnrollment = (payload:any) => {
+    return post(`/enroll/add`, payload);
+};

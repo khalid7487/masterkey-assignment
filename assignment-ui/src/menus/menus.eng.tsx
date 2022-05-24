@@ -96,14 +96,14 @@ export const USER: any = [
         ]
     },
     {
-        title: "User Order Panel",
+        title: "Project Management",
         hasSubMenu: true,
         "icon": <MdWork className="text-success"/>,
         submenus: [
             {
-                "title": "Orders",
-                "link": "/me/orders",
-            },
+                "title": "All Projects",
+                "link": "/me/all-open-project"
+            }
         ]
-    },
+    }
 ]

@@ -85,6 +85,8 @@ export const AddEnrollment = async (req, res) => {
     const projectInfo = await Project.findOne({ id: project_id });
     const alreadyExists = await Enrolled.findOne({ member_id: member_id, project_id: project_id});
 
+    console.log(userInfo);
+    
     if(alreadyExists){
         return res.status(413).json({message: "You alredy applied."})
     }
