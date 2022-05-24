@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Button, Card, Col, Row, Table, Pagination, Form, InputGroup, FormControl } from 'react-bootstrap';
-import { create, deleteItemById, download, gets, update, UpdateVehicleStatus } from "./vehicle.service";
+import { create, deleteItemById, download, gets, update, UpdateVehicleStatus } from "./project.service";
 import { ToastFailedMsg, ToastSuccessMsg, ToastWarningMsg } from "../../../common/toast";
 import { useHistory } from "react-router-dom";
 import { getLoggedUserId, getLoggedUserRoles } from "../../../common/http";
@@ -10,7 +10,7 @@ interface Props {
 
 }
 
-export default function VehiclePage({ }: Props): ReactElement {
+export default function ProjectPage({ }: Props): ReactElement {
     let history = useHistory();
 
     let [response, setResponse]: any = useState([]);
@@ -102,8 +102,6 @@ export default function VehiclePage({ }: Props): ReactElement {
             [e.target.name]: e.target.value
         })
     }
-
-
 
     return (
         <div className="mt-4 container-fluid">

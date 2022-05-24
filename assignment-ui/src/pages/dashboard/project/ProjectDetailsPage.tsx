@@ -2,7 +2,7 @@ import React, { ReactElement, RefAttributes, useEffect, useState } from "react";
 import { Button, Card, Col, Form, FormControl, Image, InputGroup, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 // @ts-ignore
-import { getVehicleById, updateVehicle } from "./vehicle.service";
+import { getVehicleById, updateVehicle } from "./project.service";
 
 
 import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";

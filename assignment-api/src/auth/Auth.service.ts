@@ -437,7 +437,7 @@ export const UpdateProfile = async (req, res) => {
         address,
         short_bio,
         bio,
-
+        user_status
     } = users
 
     try {
@@ -449,6 +449,7 @@ export const UpdateProfile = async (req, res) => {
         userInfo.address = address || userInfo.address
         userInfo.short_bio = short_bio || userInfo.short_bio
         userInfo.bio = bio || userInfo.bio
+        userInfo.user_status = user_status || userInfo?.user_status
 
 
         await userInfo.save()

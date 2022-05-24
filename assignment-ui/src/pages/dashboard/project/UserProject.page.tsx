@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { Button, Card, Col, Row, Table, Pagination } from 'react-bootstrap';
-import { addEnrollment, gets} from "./vehicle.service";
+import { addEnrollment, gets} from "./project.service";
 import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
 import { useHistory } from "react-router-dom";
 import { getLoggedUserId } from "../../../common/http";

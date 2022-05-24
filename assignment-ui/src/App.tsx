@@ -10,12 +10,7 @@ import Registration from "./auth/Registration.page";
 import MainDashboardPage from "./pages/dashboard/MainDashboard.page";
 import ReactNotification from 'react-notifications-component'
 import { isLoggedIn } from "./common/http";
-import Details from "./pages/Details.page";
-import Order from "./pages/Order.page";
-import HireDriver from './pages/HireTeacher.page';
-import TeacherPage from './pages/Teacher.page';
-import AboutPage from './pages/About.page';
-import ContactPage from './pages/Contact.page';
+
 
 function App() {
 
@@ -56,14 +51,8 @@ function App() {
                             <Route path="/login" component={Login} />
                             <Route path="/me" component={MainDashboardPage} />
 
-                            <Route path="/teachers" component={TeacherPage} />
 
-                            <Route path="/about" component={AboutPage} />
-                            <Route path="/contacts" component={ContactPage} />
-                            <Route exact path="/details/:id" component={Details} />
-                            <Route exact path="/order/:id" component={Order} />
-                            <Route exact path={`/hire-teachers/:id`} component={HireDriver} />
-                            
+              
                         </>
                         : <Login />
 

@@ -1,8 +1,7 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button, Card, Col, Form, FormControl, InputGroup, Row, } from "react-bootstrap";
-import { getProjectwiseUser, getVehicleById } from "./vehicle.service";
-import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
+import { Card, Col, Row, } from "react-bootstrap";
+import { getProjectwiseUser} from "./project.service";
 
 
 
@@ -15,7 +14,6 @@ import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
 export default function TripCreatePage({ handleClose }: any): ReactElement {
 
     let { id }: any = useParams();
-    let [sit, setSit]: any = useState();
     let [user, setUser]: any = useState([]);
 
     useEffect(() => {
@@ -39,15 +37,6 @@ export default function TripCreatePage({ handleClose }: any): ReactElement {
         }
     }
 
-
-
-
-
-
-
-
-  
-
     return (
 
         <div className="mt-4 container-fluid">
@@ -66,7 +55,7 @@ export default function TripCreatePage({ handleClose }: any): ReactElement {
                                             {user.status === 0 && (<span style={{ color: 'blue' }} >Pending</span>)}
                                             {user.status === 1 && (<span style={{ color: 'green' }}>Approved</span>)}
                                         </Col>
-
+                                        <Col lg={4} sm={12} className=" text-capitalize "><strong>User Status: </strong> {user?.user_status}</Col>
                                     </Row>
 
                                     <Row className="mt-1">

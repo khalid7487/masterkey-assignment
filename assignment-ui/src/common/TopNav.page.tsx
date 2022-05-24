@@ -2,8 +2,6 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { BrowserRouter as Router, Link, Route, Switch, useHistory, useRouteMatch } from 'react-router-dom'
 
-
-import back from '../icons/back.png';
 import { getUserProfileImage, isLoggedIn, unsetToken } from "./http";
 
 
@@ -14,10 +12,6 @@ interface Props {
 export default function TopNav({ }: Props): ReactElement {
     const history = useHistory()
 
-    const onBackClick = async () => {
-        history.push(`/`)
-    }
-
     const onLoginClick = async () => {
         history.push(`/login`)
     }
@@ -26,10 +20,6 @@ export default function TopNav({ }: Props): ReactElement {
         unsetToken();
         history.push('/login')
     }
-
-    // const onRegisterClick = async () => {
-    //     history.push(`/registration`)
-    // }
 
 
     return (
@@ -62,14 +52,7 @@ export default function TopNav({ }: Props): ReactElement {
                                         size="sm"> Logout </Button>
                                 </>
                             }
-
-                            {/* <Nav.Link style={{ color: "tomato" }} eventKey="1" href="/login">
-                                Login
-                            </Nav.Link> */}
-
-                            {/* <Nav.Link eventKey={2} href="/registration">
-                                Sign Up
-                            </Nav.Link> */}
+  
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

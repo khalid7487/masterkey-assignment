@@ -88,11 +88,7 @@ export const USER: any = [
             {
                 "title": "User Profile",
                 "link": "/me/user-profile"
-            },
-            {
-                "title": "Registration",
-                "link": "/registration"
-            },
+            }
         ]
     },
     {

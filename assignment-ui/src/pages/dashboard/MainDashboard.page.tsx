@@ -11,14 +11,14 @@ import UserUpdatePage from "../../auth/Update.page";
 import ProfilePage from "../../auth/Profile.page";
 import RolesPage from "../../auth/Roles.page";
 import RoleUpdatePage from "../../auth/Roles.update";
-import VehicleCreatePage from "./vehicle/VehicleCreatePage";
-import VehiclePage from "./vehicle/Vehicle.page";
-import VehicleDetailsPage from "./vehicle/VehicleDetailsPage";
-import Addtrip from "./vehicle/TripCreatePage";
+import VehicleCreatePage from "./project/ProjectCreatePage";
+import VehiclePage from "./project/Project.page";
+import VehicleDetailsPage from "./project/ProjectDetailsPage";
+import Addtrip from "./project/ProjectWiseMembers";
 import OrderPage from "./order/Order.page";
 
 import './dashboard.page.scss';
-import UserProjectPage from './vehicle/UserProject.page';
+import UserProjectPage from './project/UserProject.page';
 
 interface Props {
 

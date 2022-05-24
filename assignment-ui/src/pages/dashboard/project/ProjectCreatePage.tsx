@@ -1,6 +1,6 @@
 import React, { ReactElement, RefAttributes, useState, useEffect } from "react";
 import { Container, Button, Card, Col, Form, FormControl, InputGroup, Row, Image } from "react-bootstrap";
-import { create, addProject } from "./vehicle.service";
+import { create, addProject } from "./project.service";
 import { getUser } from "../../../auth/auth.service";
 import { ToastFailedMsg, ToastSuccessMsg } from "../../../common/toast";
 

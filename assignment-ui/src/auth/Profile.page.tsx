@@ -62,7 +62,8 @@ export default function ProfilePage({ }: any): ReactElement {
 
         data.append('short_bio', user.short_bio)
         data.append('bio', user.bio)
-
+        data.append('user_status', user?.user_status)
+        
         console.log("data", data)
 
         const res = await updateUser(id, data)
@@ -189,6 +190,18 @@ export default function ProfilePage({ }: any): ReactElement {
                                         <FormControl className="shadow-none" type="text" name="bio" aria-label="Small"
                                             aria-describedby="inputGroup-sizing-sm"
                                             defaultValue={user.bio}
+                                            onChange={onInputChange} />
+                                    </InputGroup>
+                                </Col>
+                            </Form.Group>
+
+                            <Form.Group as={Row}>
+                                <Form.Label column sm="2"> User Status(like working/at home) </Form.Label>
+                                <Col sm="10">
+                                    <InputGroup size="sm" className="mb-3">
+                                        <FormControl className="shadow-none" type="text" name="user_status" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm"
+                                            defaultValue={user.user_status}
                                             onChange={onInputChange} />
                                     </InputGroup>
                                 </Col>
