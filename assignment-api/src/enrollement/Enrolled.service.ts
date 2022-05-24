@@ -81,8 +81,13 @@ export const AddEnrollment = async (req, res) => {
         member_id
     } = vehicle
 
-    const userInfo = await User.findOne({ id: member_id })
-    const projectInfo = await Project.findOne({ id: project_id })
+    const userInfo = await User.findOne({ id: member_id });
+    const projectInfo = await Project.findOne({ id: project_id });
+    const alreadyExists = await Enrolled.findOne({ member_id: member_id, project_id: project_id});
+
+    if(alreadyExists){
+        return res.status(413).json({message: "You alredy applied."})
+    }
     if (!userInfo) {
         return res.status(404).json({ message: 'Supervisor does not exists' })
     }
@@ -139,7 +144,49 @@ export const GetProjectWisemebers = async (req, res) => {
 
 }
 
+export const GetAllEnrolledMent = async (req, res) => {
 
+    try {
+
+        const {
+            project_status
+        } = req.body;
+
+        let filter = [];
+
+        if (project_status) filter = [...filter,
+        {
+            project_status: ILike(`%${project_status}%`)
+        }]
+
+        const limit = req.body.limit || 10
+        const page = req.body.page || 1;
+        const offset = (page - 1) * limit;
+
+        let [result, total] = await Enrolled.findAndCount({
+            where: filter,
+            order: {
+                id: "DESC",
+            },
+            skip: offset,
+            take: limit
+        });
+
+        const data = {
+            data: result, //data
+            count: total, //total table record count data
+            totalPage: Math.ceil(total / limit), //total page
+            limit: limit,
+            page: page
+        }
+
+        return res.status(200).json(data);
+
+    } catch (error) {
+        return res.status(500).json({ error: 'Something went wrong' })
+    }
+
+}
 
 
 

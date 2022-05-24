@@ -4,7 +4,8 @@ import {
     AddEnrollment,
     UpdateProjectStatus,
     confirmEnrollment,
-    GetProjectWisemebers
+    GetProjectWisemebers,
+    GetAllEnrolledMent
 
 } from "./Enrolled.service";
 
@@ -29,7 +30,11 @@ router.patch('/confirm-enrollement/:projectId', auth, async (req: any, res: Resp
 //Add 
 router.post('/add', auth, async (req: any, res: Response) => {
      await AddEnrollment(req, res);
+})
 
+//get all enrollment
+router.post('/getall', auth, async (req:Request, res:Response) => {
+    await GetAllEnrolledMent(req, res)
 })
 
 
