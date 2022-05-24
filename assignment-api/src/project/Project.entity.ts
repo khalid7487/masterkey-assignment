@@ -32,8 +32,8 @@ export class Project extends CoreEntity {
     project_status: string
 
 
-    @Column('boolean', {default: true})
-    enroll_status: boolean = true;
+    @Column('boolean', {default: false})
+    enroll_status: boolean = false;
 
     @Column({default: 0})
     status: number          // 1, 2, 3, 4

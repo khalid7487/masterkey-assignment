@@ -53,7 +53,11 @@ export const confirmEnrollment = async (req, res) => {
 
         projectInfo.total_project_members = projectInfo.total_project_members + 1;
         projectInfo.enroll_status =true;
-        projectInfo.project_status = "PROGRESS"
+        if(projectInfo.total_project_members > 2){
+
+            projectInfo.project_status = "PROGRESS"
+        }
+
         await projectInfo.save()
 
         enrolled_info.enroll_status = true
