@@ -284,7 +284,7 @@ export const UserInfo = async (req, res) => {
 
     let [result, total] = await User.findAndCount({
         where: filter,
-        relations: ["roles", "identity"],
+        relations: ["roles",],
         order: {
             id: "DESC",
         },
@@ -365,8 +365,7 @@ export const GetUserById = async (req, res) => {
         let errors: any = {}
 
         const userInfo = await User.findOne({
-            where: { id: id },
-            relations: ["identity"]
+            where: { id: id }
         })
         if (!userInfo) errors.user = 'User does not exists'
         // console.log("something", userInfo)
@@ -423,15 +422,13 @@ export const UpdateProfile = async (req, res) => {
     let errors: any = {}
 
     const userInfo = await User.findOne({
-        where: { id: id },
-        relations: ["identity"]
+        where: { id: id }
     })
     if (!userInfo) errors.vehicle = 'User does not exists';
 
     if (Object.keys(errors).length > 0) {
         return res.status(400).json(errors)
     }
-
 
     const {
         firstname,
@@ -445,8 +442,7 @@ export const UpdateProfile = async (req, res) => {
 
     try {
 
-        // console.log(userInfo.identity.nid_no)
-
+    
         userInfo.firstname = firstname || userInfo.firstname
         userInfo.lastname = lastname || userInfo.lastname
         userInfo.dateOfbirth = dateOfbirth || userInfo.dateOfbirth

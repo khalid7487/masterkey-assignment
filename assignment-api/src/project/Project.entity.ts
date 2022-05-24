@@ -18,18 +18,17 @@ export class Project extends CoreEntity {
     @Column({type: "text"})
     project_name: string
   
-    @Column({type: "text"})
+    @Column({type: "text", nullable: true})
     project_title: string
 
-    @Column({type: "text"})
+    @Column({type: "text", nullable: true})
     project_description: string
 
-    @Column({type: "text"})
+    @Column({type: "text" , nullable: true})
     project_task: string
 
 
-
-    @Column({type: "text", default: "PROGRESS"})
+    @Column({type: "text", default: "OPEN"})
     project_status: string
 
 

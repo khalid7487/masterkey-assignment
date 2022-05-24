@@ -16,7 +16,7 @@ import {
 const router = Router()
 
 //status
-router.patch('/update-status/:vehicleId', auth, async (req: any, res: Response) => {
+router.patch('/update-status/:projectId', auth, async (req: any, res: Response) => {
    await UpdateProjectStatus(req, res);
 })
 
