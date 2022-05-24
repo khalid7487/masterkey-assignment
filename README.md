@@ -3,13 +3,14 @@
 2. Node js , express js as backend.
 3. React js as a fontend.
 4. Typescript.
+5. I used Node version v14.17.6
 
 
 ## For Backend run
 
 1. cd ./assignment-api 
 2. npm i
-3. create a database mk_assignment
+3. create a database mk_assignment   ---(Important)
 4. npm start
 
 
