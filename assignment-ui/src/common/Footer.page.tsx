@@ -42,9 +42,9 @@ export default function Footer({}: Props): ReactElement {
                 <Col className="mb-4" xs={12} md={3}>
                     <strong className="mb-4">Contact Us</strong>
                     <div>
-                        <img style={{height: '20px'}} src={message} alt="email"/> Email: askrental@gmail.com
+                        <img style={{height: '20px'}} src={message} alt="email"/> Email: roxy7487@gmail.com
                     </div>
-                    <div><img style={{height: '20px'}} src={phone} alt="phone"/> Phone: 01948-344664</div>
+                    <div><img style={{height: '20px'}} src={phone} alt="phone"/> Phone: 01948-349416</div>
                     <div className="mt-3">Connect with us</div>
                     <div className="d-flex justify-content-around">
                         <img src={fb} alt="facebook"/>
@@ -58,7 +58,7 @@ export default function Footer({}: Props): ReactElement {
 
             </Row>
             <Row className="mb-5 text-center">
-                <span className="mb-4">Copyright &copy; Rental App. All rights reserved</span>
+                <span className="mb-4">Copyright &copy; Assignment App. All rights reserved</span>
             </Row>
         </div>
     )

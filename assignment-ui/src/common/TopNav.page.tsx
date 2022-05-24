@@ -34,36 +34,13 @@ export default function TopNav({ }: Props): ReactElement {
 
     return (
         <div className="main-section">
-            {/* <h1>Welcome To Rental App </h1>
-
-            <div className="menu">
-                <Link to="/login" > Login </Link>
-                <Link to="/me" > Home Page </Link>
-                <Link to="/registration" > Registration </Link>
-                <Link to="/drivers" > Driver </Link>
-            </div> */}
-
-            {/* style={{ backgroundColor: "#DFE1E6  !important"}}  */}
-
+         
             <Navbar className="d-none d-lg-block " expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand href="/">Online Tutor</Navbar.Brand>
+                    <Navbar.Brand href="/">Assignment</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-
-                            <Nav.Link href="/teachers">Teachers</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
-                            <Nav.Link href="/contacts">Contacts</Nav.Link>
-
-                        </Nav>
-                    </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
-
-                            {/*<Button variant="outline-primary" type="button" className="m-1"
-                            onClick={onRegisterClick} size="sm"> Sign Up </Button>*/}
-
 
 
                             {!isLoggedIn() ?
